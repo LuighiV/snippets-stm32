@@ -2,7 +2,7 @@
 
 # LEDs initialization 
 
-```
+```C
 static void MX_LED_Init(void){
 
   GPIO_InitTypeDef  gpio_init_structure;
@@ -31,7 +31,7 @@ static void MX_LED_Init(void){
 
 Use of these function
 
-```
+```C
 HAL_GPIO_TogglePin(GPIOE,GPIO_PIN_1);
 HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_14);
 HAL_Delay(2000);
@@ -39,18 +39,18 @@ HAL_Delay(2000);
 
 # UART configuration
 
-```
+```C
 #define HAL_TIMEOUT_VALUE 0xFFFFFFFF
 #define countof(a) (sizeof(a) / sizeof(*(a)))
 #define BUFFER_LENGTH 100
 ```
 
-```
+```C
 uint8_t HeaderTxBuffer[] = "\r\nUART WakeUp!\r\n";
 char buff[BUFFER_LENGTH];
 ```
 
-```
+```C
 HAL_UART_Transmit(&huart3, (uint8_t*)&HeaderTxBuffer, countof(HeaderTxBuffer)-1, HAL_TIMEOUT_VALUE);
 
 ```
